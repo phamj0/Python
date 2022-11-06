@@ -28,8 +28,9 @@ print('How many years (t) will the money be compounded for? ')
 t = int(input('Years: '))
 
 total_amount = p * ((1 + r / n) ** (n * t))
+new_amount = round(total_amount, 3)
 
-print(total_amount)
+print(new_amount)
 
 # 6. What happened with the last example? Why? If you were able to correctly anticipate the computer’s response in
 # all but the last one, it is time to move on. If not, take time now to make up examples of your own. Explore the
