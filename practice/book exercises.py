@@ -1,7 +1,7 @@
 
 # Chapter 3
 
-for x in range(5):                                                              # 1
+""" for x in range(5):                                                              # 1
     print('I like turtles')
 
 for x in ['January', 'February', 'March', 'April', 'May', 'June', 'July']:      # 2
@@ -25,7 +25,7 @@ total = 1
 for x in xs:
     total *= x
 print(total)
-
+ """
 # Chapter 5
 
 
@@ -84,9 +84,9 @@ def grade(x):                                                                   
         print('F3')
 
 
-# studentGrade = int(input('Enter your grade: '))
+studentGrade = int(input('Enter your grade: '))
 
-# grade(studentGrade)
+grade(studentGrade)
 
 xs = [83, 75, 74.9, 70, 69.9, 65, 60, 59.9, 55, 50, 49.9, 45, 44.9, 40, 39.9, 2, 0]
 
