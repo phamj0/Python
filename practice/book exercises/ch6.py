@@ -1,5 +1,5 @@
 
-def turn_clockwise(x):                                              # 1
+def turn_clockwise(x):                                                      # 1
     if x == 'N':
         print('E')
     elif x == 'E':
