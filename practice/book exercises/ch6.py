@@ -19,5 +19,4 @@ user_input = input('Enter a compass point: ')
 
 turn_clockwise(user_input)
 
-print(turn_clockwise('N')=='E')
-
+turn_clockwise('N')=='E'
