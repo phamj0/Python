@@ -1,8 +1,8 @@
 
-# Chapter 5
+# Chapter 5 Exercises
 
-
-def weekDays(x):                                                                # 1
+# 1
+def weekDays(x):                                                               
     if x == 0:
         print('Sunday')
     elif x == 1:
@@ -25,7 +25,9 @@ user_input = float(input('Enter a number from 0 - 6: '))
 
 weekDays(user_input)
 
-weekDays = {0: 'Sunday',                                                         # 2
+
+# 2
+weekDays = {0: 'Sunday',                                                         
             1: 'Monday',
             2: 'Tuesday',
             3: 'Wednesday',
@@ -40,7 +42,8 @@ x = (duration + departure) % 7
 print('You will return on', weekDays[x])
 
 
-def grade(x):                                                                    # 6
+# 6
+def grade(x):                                                                    
     if x >= 75:
         print('First')
     elif x >= 70:
@@ -67,7 +70,8 @@ for z in xs:
     print('Mark: ' + str(z) + ' Grade: ', end=''), (grade(z))
 
 
-def find_hypo(x, y):                                                          # 10
+# 10
+def find_hypo(x, y):                                                          
     hypotenuse = (x**2 + y**2)**0.5
     rounded = round(hypotenuse, 2)
     print('The hypotenuse is: ', rounded)
@@ -78,7 +82,8 @@ yy = float(input('Second side: '))
 find_hypo(xx, yy)
 
 
-def is_right(x, y, z):                                                          # 11
+# 11
+def is_right(x, y, z):                                                          
     answer = x**2 + y**2
     if answer != z**2:
         print('False')

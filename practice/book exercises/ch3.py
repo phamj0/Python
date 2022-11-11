@@ -1,14 +1,19 @@
 
-# Chapter 3
+# Chapter 3 Exercises
 
-for x in range(5):                                                              # 1
+# 1
+for x in range(5):
     print('I like turtles')
 
-for x in ['January', 'February', 'March', 'April', 'May', 'June', 'July']:      # 2
+
+# 2
+for x in ['January', 'February', 'March', 'April', 'May', 'June', 'July']:      
     statement = 'The month is ' + x
     print(statement)
 
-xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]                                        # 5
+
+# 5
+xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]                                        
 
 for x in xs:
     print(x)
