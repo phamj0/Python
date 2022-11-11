@@ -8,5 +8,3 @@ for x in range(len(list_of_keys)):
     my_dict[list_of_keys[x]] = list_of_values[x]
 
 print(my_dict.items())
-
-print(my_dict)
