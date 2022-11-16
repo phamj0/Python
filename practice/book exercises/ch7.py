@@ -86,5 +86,65 @@ print(f'There are {count_words()} words before Sam appears in the list.\n')
 
 # 7
 print('Question 7: ')
+def sqrt(n):
+    approx = n/2.0     # Start with some or other guess at the answer
+    while True:
+        better = (approx + n/approx)/2.0
+        print(better)
+        if abs(approx - better) < 0.001:
+            return better
+        approx = better
 
-def
+print(sqrt(25), '\n')
+
+
+# 8
+print('Question 8: ')
+def print_multiples(n, high):
+    for i in range(1, high+1):
+        print(n * i, end="   ")
+    print()
+
+def print_mult_table(high):
+    for i in range(1, high+1):
+        print_multiples(i, high)
+
+print(print_mult_table(5), '\n')
+
+
+# 9
+print('Question 9: ')
+def print_triangular_numbers(n):
+    for x in range(1, n+1):
+        print(x, x*(x+1)/2)
+
+print(print_triangular_numbers(5), '\n')
+
+
+# 10
+print('Question 10: ')
+def is_prime(x):
+    if x < 2:
+        return False
+    else:
+        for n in range(2,x):
+            if x % n == 0:
+               return False
+        return True
+
+print(is_prime(19), '\n')
+
+
+# 14
+print('Question 14: ')
+def num_digits(n):
+    count = 0
+    if n == 0:
+        return 1
+    while n != 0:
+        count = count + 1
+        n = n // 10
+    return count
+
+print(num_digits(100), '\n')
+
