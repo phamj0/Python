@@ -148,3 +148,16 @@ def num_digits(n):
 
 print(num_digits(100), '\n')
 
+
+# 15
+print('Question 15: ')
+def num_even_digits(numbers):
+    count = 0
+    numbers = str(numbers)
+    for number in numbers:
+        number = int(number)
+        if number % 2 == 0:
+            count += 1
+    return count
+
+print(num_even_digits(123456))
