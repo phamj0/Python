@@ -7,7 +7,7 @@ def num13(x):
      if z == 'the':
         countThe += 1
     longest = max(string1.split(), key=len)
-    return longest, countThe
+    return longest
 
 print(num13(string1))
     
