@@ -30,7 +30,7 @@ list = [5, 4, 6, 9, 2, 90]
 
 def sumPositiveSquares(n):
     totalSum = 0        # initializing new variable that will contain the sum
-    for x in range(1, n+1):
+    for x in range(1, n):
         totalSum += x ** 2      # adding each square in the range to variable one at a time
     return totalSum
 
@@ -38,7 +38,7 @@ def sumPositiveSquares(n):
 # R-1.5
 
 def sumPositiveSquares2(n):     # the problem calls for a single command but I inserted it into a function to be able to call it from the main function
-     return sum(x ** 2 for x in range(1, n+1) if n > 0)     # one line command using comprehension syntax
+     return sum(x ** 2 for x in range(1, n) if n > 0)     # one line command using comprehension syntax
 
 
 # R-1.6
@@ -63,7 +63,7 @@ def rangeConstructor():
     list1 = []      # creating an empty list
     for x in range(50, 81, 10):
         list1.append(x)     # appending each result to the empty list
-    print(list1)
+    return list1
 
 
 # R-1.10
@@ -72,7 +72,7 @@ def rangeConstructor2():
     list1 = []      # creating empty list
     for x in range(-8, 10, 2):
         list1.append(x)
-    print(list1[::-1])      # prints out resulting list but in reverse to match list given in the problem
+    return list1[::-1]     # prints out resulting list but in reverse to match list given in the problem
 
 
 # R-1.11
@@ -84,14 +84,14 @@ def listComp():
 # main function that will call each problem at once
 
 def main():
-    print(is_multiple(12, 60))
-    print(minmax(list))
-    print(sumPositiveSquares(4))
-    print(sumPositiveSquares2(4))
-    print(sumOddSquares(6))
-    print(sumOddSquares2(6))
-    rangeConstructor()
-    rangeConstructor2()
-    print(listComp())
+    print("Is 12 a multiple of 60?", is_multiple(12, 60))
+    print("From the given list, the min and max of the list are: ", minmax(list))
+    print("The sum of the squares of all the positive integers smaller than 5 is: ", sumPositiveSquares(5))
+    print("Using comprehension syntax for the previous problem, the answer is: ", sumPositiveSquares2(5))
+    print("The sum of the squares of all the odd positive integers smaller than 6 is: ", sumOddSquares(6))
+    print("Using comprehension syntax for the previous problem, the answer is: ", sumOddSquares2(6))
+    print(f"The parameters sent to the range constructor to produce the list {rangeConstructor()} is (50, 81, 10).")
+    print(f"The parameters sent to the range constructor to produce the list {rangeConstructor2()} is (-8, 10, 2).")
+    print("Using list comprehension syntax, I produced the following list: ", listComp())
 
 main()
