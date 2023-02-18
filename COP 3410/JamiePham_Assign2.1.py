@@ -62,7 +62,7 @@ class CreditCard:
         A modification to charge method that would also decrement the limit
         '''
 
-        if isinstance(purchase, (int, float)):
+        if isinstance(purchase, (int, float)):          # reference from the class textbook
             if (purchase + self._balance) <= self._limit:
                 self._balance += purchase
                 self._limit -= purchase
@@ -98,8 +98,9 @@ if __name__ == "__main__":       #uses test cases to test the class inside the s
 
     for val in range(1, 100):
        wallet[0].charge(val)   #invoking a method to charge the card
-       wallet[1].charge(val)
-       wallet[2].charge(val)
+       wallet[1].charge(2*val)
+       wallet[2].charge(3*val)
+
 
     for c in range(3):   #for all 3 cards
         print( 'Customer =' , wallet[c].get_customer( ))
@@ -107,8 +108,8 @@ if __name__ == "__main__":       #uses test cases to test the class inside the s
         print( 'Account = ', wallet[c].get_account( ))
         print( 'Available Credit = ', wallet[c].get_limit( ))
         print( 'Balance =' , wallet[c].get_balance())
-        if wallet[c].get_balance( ) > 1:
-            wallet[c].make_payment(0)
+        if wallet[c].get_balance( ) > 100:
+            wallet[c].make_payment(100)
             print( 'New_balance = ', wallet[c].get_balance())
             print( 'Available_Credit = ', wallet[c].get_limit())
         print( )

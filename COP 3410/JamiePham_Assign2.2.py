@@ -52,6 +52,10 @@ class CreditCard:
         self._balance = balance
         self._limit -= balance
 
+    # Nonpublic method to set balance
+    def _set_balance(self, amount):
+        self._balance = amount
+
     def set_limit(self, limit):
         self._limit = limit
         
@@ -78,7 +82,7 @@ class CreditCard:
 class PredatoryCreditCard(CreditCard):     #a child of the credit card class, it is inheriting all the methods and it's allowed to use all the instances from Credit Card
     ''' An extension to CreditCard that compounds interest and fees '''
 
-    def __init__ (self, customer, bank, acnt, limit, apr):
+    def __init__ (self, customer, bank, acnt, limit, apr, minPaymentPercent, lateFee):
      '''Create a new predatory credit card instance.
      The initial balance is zero.
 
@@ -92,16 +96,19 @@ class PredatoryCreditCard(CreditCard):     #a child of the credit card class, it
      #CreditCard. __init__ (self,customer, bank, acnt, limit)
      super(). __init__ (customer, bank, acnt, limit) # call super constructor, this is the CreditCard initializer
      self._apr = apr
+     self._callCount = 0
+     self._minPaymentPercent = minPaymentPercent
+     self._lateFee = lateFee
 
 
-     def charge(self, price):
+    def charge(self, price):
       ''' Charge given price to the card, assuming sufficient credit limit.
           Return True if charge was processed.
           Return False and assess 5 fee if charge is denied.
       '''
       success = super().charge(price)               # call inherited method
       if not success:
-         self._balance += 5                          # assess penalty
+        self._balance += 5                          # assess penalty
       return success                                 # caller expects return value
 
      
@@ -111,32 +118,43 @@ class PredatoryCreditCard(CreditCard):     #a child of the credit card class, it
        # if positive balance, convert APR to monthly multiplicative factor
           monthly_factor = pow(1 + self._apr, 1/12)   #1/12 power of (1+apr)
           self._balance = monthly_factor * self._balance
+          
+          # Asessing minimum payment and late fees
+          min_payment = self._minPaymentPercent * self._balance
+          if self.min_payment() < min_payment:
+              self._balance += self._lateFee
+
+          # counting the amount of calls made in the current month 
+          self._callCount += 1
+          if self._callCount >= 10:
+                self._balance += 1
+    
+
+    def min_payment(self):
+        '''Calculating the minimum payment for the month'''
+        return self._minPaymentPercent * self._balance
+
 
     def __str__(self):
         """ Returns a string representation of self """
         return "customer: " + str(self._customer) + "\nbank: " + str(self._bank) + "\naccount: " + str(self._account) + "\nlimit: " + str(self._limit) + "\nbalance: " + str(self._balance)
 
-
+ 
 
  ############### Testing the class ########################################     
         
 if __name__ == "__main__":       #uses test cases to test the class inside the same script file
 
    
-   visa = PredatoryCreditCard('Sally Shoo', 'Vells','1234 5678 9012 3456', 5000,0.0825)   #calling the constructor
+   visa = PredatoryCreditCard('Sally Shoo', 'Vells','1234 5678 9012 3456', 5000,0.0825, 0.008, 10)   #calling the constructor
    
    print(visa)   # this shows the need for __str__ method
-##   print('visa balance:', visa.get_balance())
-##   print('visa limit:', visa.get_limit())
-##   print('visa account:', visa.get_account())
-   print('visa charge:', visa.charge(200))
+#   print('visa balance:', visa.get_balance())
+#   print('visa account:', visa.get_account())
+   print('minimum payment: ', visa.min_payment())
+   print('visa charge:', visa.charge(200), '\n')
    visa.process_month()
    print(visa)
    
- 
-
-
-
-
-
-    
+   
+   
