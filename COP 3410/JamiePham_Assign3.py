@@ -38,7 +38,7 @@ y4 = []
 for i in x4:
     y4.append(i**3)
 
-'''Graph 4n log n'''
+'''Graph 2**n'''
 x5 = n
 y5 = []
 for i in x5:
