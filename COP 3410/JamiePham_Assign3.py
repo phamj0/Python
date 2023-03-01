@@ -48,8 +48,6 @@ for i in x5:
 plt.title('Question R-3.1')
 plt.xlabel('n')
 plt.ylabel('f(n)')
-
-
 plt.xscale('log')
 plt.yscale('log')
 
