@@ -12,7 +12,7 @@ import math
 
 # R-3.1 
 
-n = [10*x for x in range(1, 10)]
+n = [10*x for x in range(1, 20)]
 
 '''Graph 8n'''
 x1 = n
