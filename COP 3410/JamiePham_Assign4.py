@@ -48,14 +48,14 @@ class Matrix:
 
     def addition(self):
         '''Adds both matrices'''
-        if len(self.m1[0]) != len(self.m2[0]):
+        if len(self.m1[0]) != len(self.m2[0]):      # raises IndexError 
             raise IndexError('Matrix dimensions must be equal')
         additionMatrix = []
         for row in range(len(self.m1)):
-            newRow = []
+            newRow = []                             # creates new list object to store result into a row
             for col in range(len(self.m1[0])):
                 newRow.append(self.m1[row][col] + self.m2[row][col])
-            additionMatrix.append(newRow)
+            additionMatrix.append(newRow)           # adds new row made to mimic a matrix
         return additionMatrix
                 
         
