@@ -103,5 +103,5 @@ if __name__ == "__main__":
 # Out of the 32 enqueues, 15, dequeues, and 10 first operations, the first operations
 # do not affect the elements in the queue and only returns them. Therefore, I rule out the first operations.
 # Starting with an empty list and performing 32 enqueues, there should be 32 elements currently.
-# Out of the 15 dequeues, 5 failed.
+# Out of the 15 dequeues, 5 failed. Subtracting 10 dequeues from 32 enqueues results in 22.
 # In conclusion, here should be a total of 22 elements left in the queue. 
