@@ -59,6 +59,7 @@ class ArrayStack:
     def recursiveRemove(self):
         '''Method for removing all elements in the stack'''
         if len(self._data) == 0:
+            self._data = [None] * self._maxlen
             return self._data
         elif len(self._data) > 0:
             self._data.pop()
@@ -66,8 +67,11 @@ class ArrayStack:
         
     def __str__(self):
         '''Returns string of list object'''
-        
-        return str(self._data)
+        filtered_str = []
+        for i in self._data:
+            if i != None:
+                filtered_str.append(i)
+        return str(filtered_str)
 
 
 class Empty(Exception):       # Defines an Empty class as a trivial subclass of the Python Exception class.
@@ -91,23 +95,26 @@ def reverse_file(filename):
 
 
 if __name__ == "__main__": 
-    S = ArrayStack(5) # contents: [ ]
-    print(len(S))
-    print(S)
-    S.push(5)
-    print(S)
-    S.push(4)
-    print(S)
-    S.push(3)
-    print(S)
+    S = ArrayStack(10) # contents: [ ]
+    S.push(1)
     S.push(2)
     print(S)
-    S.push(1)
+    S.push(3)
+    S.push(4)
+    S.push(5)
+    print(S)
+    S.push(6)
+    S.push(7)
+    S.push(8)
+    S.push(9)
+    S.push(10)
     print(S)
     S.pop()
-    print(len(S))
     print(S)
-    S.push(1)
+    S.push(11)
+    print(S)
+    S.push(12)
     print(S)
     S.recursiveRemove()
     print(S)
+
