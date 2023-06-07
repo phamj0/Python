@@ -42,11 +42,14 @@ class Queue(object):
    def first(self):                       # Return frontmost item
       return None if self.is_empty() else self.__que[self.__front]
  
-   def is_empty(self): return self.__nItems == 0
+   def is_empty(self): 
+      return self.__nItems == 0
  
-   def is_full(self): return self.__nItems == self.__maxSize
+   def is_full(self): 
+      return self.__nItems == self.__maxSize
  
-   def __len__(self): return self.__nItems
+   def __len__(self): 
+      return self.__nItems
  
    def __str__(self):                    # Convert queue to string
       ans = "["                          # Start with left bracket
