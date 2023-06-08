@@ -42,11 +42,14 @@ class Queue(object):
    def first(self):                       # Return frontmost item
       return None if self.is_empty() else self.__que[self.__front]
  
-   def is_empty(self): return self.__nItems == 0
+   def is_empty(self): 
+      return self.__nItems == 0
  
-   def is_full(self): return self.__nItems == self.__maxSize
+   def is_full(self): 
+      return self.__nItems == self.__maxSize
  
-   def __len__(self): return self.__nItems
+   def __len__(self): 
+      return self.__nItems
  
    def __str__(self):                    # Convert queue to string
       ans = "["                          # Start with left bracket
@@ -103,5 +106,5 @@ if __name__ == "__main__":
 # Out of the 32 enqueues, 15, dequeues, and 10 first operations, the first operations
 # do not affect the elements in the queue and only returns them. Therefore, I rule out the first operations.
 # Starting with an empty list and performing 32 enqueues, there should be 32 elements currently.
-# Out of the 15 dequeues, 5 failed.
+# Out of the 15 dequeues, 5 failed. Subtracting 10 dequeues from 32 enqueues results in 22.
 # In conclusion, here should be a total of 22 elements left in the queue. 
