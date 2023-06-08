@@ -1,4 +1,4 @@
-# Team Members: Nicolas Uribe, Jamie Pam
+# Team Members: Nicolas Uribe, Jamie Pham
 # Date: 6/7/2023
 # Assignment: Project 1
 
