@@ -7,7 +7,8 @@ class AntColonyOpt:
 
     def ant(self):
         visited_attraction = []
-
+        for place in range (0, (self.attraction_count-1)):
+            visited_attraction.append(place)
 
 
 
