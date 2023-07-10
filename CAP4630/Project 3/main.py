@@ -1,6 +1,6 @@
 # Team Members: Nicolas Uribe, Jamie Pham
-# Date: 6/7/2023
-# Assignment: Project 1
+# Date: 7/8/2023
+# Assignment: Project 3
 
 import numpy as np
 
