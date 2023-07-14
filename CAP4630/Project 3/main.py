@@ -1,5 +1,6 @@
 # Team Members: Nicolas Uribe, Jamie Pham
 # Date: 7/8/2023
+# CAP 4630
 # Assignment: Project 3
 
 import numpy as np
@@ -18,7 +19,7 @@ class AntColonyOptimization:
         self.pheromone = np.ones((self.n_attractions, self.n_attractions))
 
     def main(self):
-        '''Main method that executes the core functions of the 
+        '''Main method that executes the core functions of the
         Ant algorithm i.e pheromone update and best path tracking'''
         best_path = None
         best_length = float('inf')
@@ -45,7 +46,7 @@ class AntColonyOptimization:
         return distances
 
     def construct_solutions(self):
-        '''Generates solution paths by iteratively choosing the next attraction for each ant 
+        '''Generates solution paths by iteratively choosing the next attraction for each ant
         based on the ant's current city, pheromone levels, and heuristic information'''
         paths = []
 
@@ -98,25 +99,11 @@ class AntColonyOptimization:
             attractionOne, attractionTwo = path[i], path[i + 1]
             length += self.distances[attractionOne, attractionTwo]
         return length
-    
-    def plot_path(self, path):
-        '''Plots the best path on a graph'''
-        x = []
-        y = []
-        for attraction in path:
-            x.append(attraction)
-            y.append(attraction)
-
-        plt.plot(x, y, 'ro-')
-        plt.xlabel('Attraction')
-        plt.ylabel('Attraction')
-        plt.title('Best Path')
-        plt.show()
 
 
 if __name__ == '__main__':
     n_attractions = int(input('Enter number of attractions to visit (5-100): '))
-    n_ants = int(input('Enter number of ants in colony(10-100): '))
+    n_ants = int(input('Enter number of ants in colony(10-500): '))
     n_iterations = 100
     decay_factor = 0.5
     alpha = 1.0
@@ -128,5 +115,3 @@ if __name__ == '__main__':
 
     print("Best path:", best_path)
     print("Best length:", best_length)
-
-    aco.plot_path(best_path)
