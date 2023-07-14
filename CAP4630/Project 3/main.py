@@ -98,6 +98,20 @@ class AntColonyOptimization:
             attractionOne, attractionTwo = path[i], path[i + 1]
             length += self.distances[attractionOne, attractionTwo]
         return length
+    
+    def plot_path(self, path):
+        '''Plots the best path on a graph'''
+        x = []
+        y = []
+        for attraction in path:
+            x.append(attraction)
+            y.append(attraction)
+
+        plt.plot(x, y, 'ro-')
+        plt.xlabel('Attraction')
+        plt.ylabel('Attraction')
+        plt.title('Best Path')
+        plt.show()
 
 
 if __name__ == '__main__':
@@ -114,3 +128,5 @@ if __name__ == '__main__':
 
     print("Best path:", best_path)
     print("Best length:", best_length)
+
+    aco.plot_path(best_path)
