@@ -21,4 +21,21 @@ Temporary head
 
 
 
-print(6//2)
+def quiz(i):
+    if i > 1:
+        quiz(i/2)
+        quiz(i/2)
+    print("*")
+
+def test(n):
+    print(f"{n}")
+    if n > 0:
+        test(n-2)
+
+
+def test1(n):
+    if n > 0:
+        test1(n-2)
+        print(f"({n})")
+
+test1(4)
