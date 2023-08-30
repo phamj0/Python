@@ -21,21 +21,33 @@ Temporary head
 
 
 
-def quiz(i):
-    if i > 1:
-        quiz(i/2)
-        quiz(i/2)
-    print("*")
 
-def test(n):
-    print(f"{n}")
-    if n > 0:
-        test(n-2)
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = self.right = None
+
+    def sum_of_left_leaves(root):
+        def helper(root, counter):
+            while root:
+                if root.left == None:
+                    root.val += counter
+                else:
+                    helper(root.left, counter) and helper(root.right, counter)
+        sumLeft = 0
+        helper(root, sumLeft)
+        return (sumLeft)
+    
 
 
-def test1(n):
-    if n > 0:
-        test1(n-2)
-        print(f"({n})")
+teamA = [1, 4, 6]
+teamB = [2, 3, 5]
 
-test1(4)
+for num in teamB:
+    teamA.append(num)
+    teamA.sort()
+
+list1 = [1, 2]
+list2 = [3, 4]
+list1.extend(list2)
+print(list1)
